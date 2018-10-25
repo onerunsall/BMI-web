@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv = "X-UA-Compatible" content ="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <script src="lib/jquery-1.9.1.min.js"></script>
+<script>
+    var loadTime = new Date().getTime()
+     function parseQueryStr(queryStr){
+        var str=decodeURIComponent(queryStr);
+        var arr=str.split("&");
+        var obj = {};
+        for(var i=0;i < arr.length;i++){
+            var arrsub=arr[i].split("=");
+            obj[arrsub[0]]=arrsub[1];
+        }
+        return obj;
+    }
+
+    var queryObj = parseQueryStr(location.search.substr(1))
+
+
+
+</script>
+    <title></title>
+    <style>
+        body{
+            font-family: SimHei;
+        }
+        .div1{
+
+            background-color: #4F4B4C;
+            margin-bottom: 11px;
+            text-align: center;
+            padding:21px 0;
+            color:#FFFFFF;
+            font-size: 24px;
+        }
+        .div4{
+            height:170px;
+            width:170px;
+            text-align: center;
+            border-radius: 50%;
+            border:1px solid #64bfa0;
+            position:relative;
+            margin:0 auto;
+            margin-top:30px;
+            color:#FFFFFF
+        }
+        .div5{
+            height:154px;
+            width:154px;
+            background-color: #64bfa0;
+            text-align: center;
+            border-radius: 50%;
+            margin:0 auto;
+            position:relative;
+            top:8px;
+
+        }
+        .div5 .div0{
+            height:27px
+
+        }
+
+        .div5 .text1{
+            font-size: 22px;
+
+        }
+        .div5 .text2{
+            font-size: 70px;
+        }
+        .dicsount {
+            text-align: center;
+            padding: 13px;
+            font-size: 24px;
+            background-color: #EE296E;
+            color:#ffffff;
+            letter-spacing: 8px;
+    margin-top:30px;
+        }
+        .texthaha{
+            text-align: center;
+            padding: 13px;
+            font-size: 22px;
+            background-color: #ffffff;
+            color:#79CFA9;
+            letter-spacing: 2px;
+            margin-top:10px;
+            font-weight: 700;
+        }
+
+        .talbetitle{
+            text-align: center;
+            padding: 13px;
+            font-size: 16px;
+            background-color: #B2B0B0;
+            color:#ffffff;
+            letter-spacing: 2px;
+            margin-top:10px;
+            font-weight: 700;
+        }
+
+        .talbecontent{
+
+            padding: 13px;
+            font-size: 16px;
+            background-color: #F4F3F3;
+            color:#9B9999;
+            letter-spacing: 2px;
+
+        }
+
+        .talbecontent ul{
+           margin:0;
+            padding:0;
+            list-style: none;
+            overflow: hidden;
+        }
+        .talbecontent li{
+
+            float:left;
+            width:100%
+        }
+        .talbecontent .text1{
+            margin-right:30px;
+            margin-left:30px;
+
+            float:left
+        }
+        .talbecontent .text2{
+            margin-right:30px;
+            float:right
+        }
+        .share {
+            text-align: center;
+            padding: 13px;
+            font-size: 22px;
+            background-color: #65C99C;
+            color:#ffffff;
+            letter-spacing: 3px;
+            margin-top:10px;
+        }
+        .reward {
+            text-align: center;
+            padding: 13px;
+            font-size: 22px;
+            background-color: #EE296E;
+            color:#ffffff;
+            letter-spacing: 2px;
+            margin-top:10px;
+        }
+
+        .again {
+            text-align: center;
+            padding: 13px;
+            font-size: 22px;
+            background-color: #B2B0B0;
+            color:#ffffff;
+            letter-spacing: 2px;
+            margin-top:10px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="div1">BMI 体质测算器</div>
+<div class="div4"><div class="div5"><div class="div0"></div><div class="text1">BMI值</div><div class="text2 bmiNum"></div></div></div>
+<div class="dicsount"><span class="discountNum"></span>折</div>
+<div class="texthaha"></div>
+<div class="talbetitle">BMI第三季活动折扣对照表</div>
+<div class="talbecontent">
+    <ul>
+
+    </ul>
+
+</div>
+<div style="clear:both"></div>
+<div class="share">转给朋友，测测<span class="discountNum"></span>折吃好肉</div>
+<div class="reward">点击抽奖，赢3000元</div>
+<div class="again">再测一次</div>
+
+<div class="talbecontentLiTmp" style="display:none">
+    <li><span class="text1"></span><span class="text2"></span></li>
+</div>
+
+
+</div>
+</body>
+<script>
+
+    var myDiscount;
+
+
+    $.ajax({
+        url:'/BMI/u/ua/bmitest',
+        method:'post',
+        data:{kg:queryObj.kg,m:queryObj.m},
+        async:true,
+        success:function(res){
+            if(res.code==0){
+                myDiscount=res.data;
+                if(myDiscount.bmiInfo){
+                    $('.texthaha').text(myDiscount.bmiInfo.funnyWord)
+                    $('.discountNum').text(myDiscount.bmiInfo.discount)
+                }
+                $('.bmiNum').text(parseInt(myDiscount.bmi*10)/10)
+            }else{
+                alert(res.codeMsg)
+            }
+        }
+    })
+
+
+    $.ajax({
+        url:'/BMI/u/oth/discounts',
+        method:'post',
+        data:{ps:100},
+        async:true,
+        success:function(res){
+            if(res.code == 0){
+                for(var i in res.data.items){
+                    var item = res.data.items[i]
+                    var talbecontentLi = $('.talbecontentLiTmp').children().clone(true);
+                    talbecontentLi.find('.text1').text(item.bmiTxt)
+                    talbecontentLi.find('.text2').text(item.discountTxt)
+                    talbecontentLi.css('display','')
+                    $('.talbecontent ul').append(talbecontentLi)
+                }
+
+            }
+        }
+    })
+
+    $('.again').click(function(){
+        location.href='index.html'
+    })
+
+    $('.share').click(function(){
+        $('#sharewxshadow').show()
+    })
+
+
+    $.get('sharewxshadow.html',function(res){
+        $(document.body).append(res)
+    })
+
+
+</script>
+</html>
