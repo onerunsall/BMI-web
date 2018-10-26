@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv = "X-UA-Compatible" content ="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="bookmark" href="favicon.ico"/>
     <script src="lib/jquery-1.9.1.min.js"></script>
 <script>
     var loadTime = new Date().getTime()
@@ -29,20 +31,29 @@
             font-family: SimHei;
         }
         .div1{
-
             background-color: #4F4B4C;
             margin-bottom: 11px;
             text-align: center;
-            padding:21px 0;
+            height:50px;
+            line-height:50px;
             color:#FFFFFF;
             font-size: 24px;
+            position: relative;
+        }
+        .div1 img{
+            height: 100%;
+            position: absolute;
+            left: 0;
+        }
+        .div1 .title{
+            position: relative;
         }
         .div4{
             height:170px;
             width:170px;
             text-align: center;
             border-radius: 50%;
-            border:1px solid #64bfa0;
+            border:1px solid #65C99C;
             position:relative;
             margin:0 auto;
             margin-top:30px;
@@ -51,7 +62,7 @@
         .div5{
             height:154px;
             width:154px;
-            background-color: #64bfa0;
+            background-color: #65C99C;
             text-align: center;
             border-radius: 50%;
             margin:0 auto;
@@ -161,11 +172,34 @@
             letter-spacing: 2px;
             margin-top:10px;
         }
+
+        .div10{
+            height:223px;
+            margin-top: 29px;
+            text-align: center;
+
+            border-top: 1px solid #CFCFCF;
+            border-bottom: 1px solid #CFCFCF;
+        }
+        .div10 .pic{
+            margin-top:30px;
+            height:129px;
+            width:129px;
+
+        }
+        .div10 .text{
+            margin-top:16px;
+            font-size: 18px;
+            color:#7BD0AA;
+            letter-spacing: 1px;
+            font-weight: 800;
+
+        }
     </style>
 </head>
 
 <body>
-<div class="div1">BMI 体质测算器</div>
+<div class="div1"><img src="images/285)2X`0DJSM(C[T0U15_RC.png"><span class="title">BMI 体质测算器</span></div>
 <div class="div4"><div class="div5"><div class="div0"></div><div class="text1">BMI值</div><div class="text2 bmiNum"></div></div></div>
 <div class="dicsount"><span class="discountNum"></span>折</div>
 <div class="texthaha"></div>
@@ -181,12 +215,14 @@
 <div class="reward">点击抽奖，赢3000元</div>
 <div class="again">再测一次</div>
 
+<div class="div10"><img class="pic" src="images/111.png"><div class="text">潮汕鲜牛肉火锅</div></div>
+
 <div class="talbecontentLiTmp" style="display:none">
     <li><span class="text1"></span><span class="text2"></span></li>
 </div>
 
 
-</div>
+
 </body>
 <script>
 
