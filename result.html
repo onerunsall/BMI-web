@@ -218,7 +218,7 @@
 
 <body>
 <div class="div1"><img src="images/285)2X`0DJSM(C[T0U15_RC.png"><span class="title">BMI 体质测算器</span></div>
-<div class="div4"><div class="div41"><div class="div5"><div class="text"><div class="text1">BMI值</div><div class="text2">0</div></div><img src="images/bb.png" /></div></div><img src="images/bb.png" /></div>
+<div class="div4"><div class="div41"><div class="div5"><div class="text"><div class="text1">BMI值</div><div class="text2 bmiNum">0</div></div><img src="images/bb.png" /></div></div><img src="images/bb.png" /></div>
 <div class="dicsount"><span class="discountNum"></span>折</div>
 <div class="texthaha"></div>
 <div class="talbetitle">BMI第三季活动折扣对照表</div>
@@ -295,7 +295,9 @@
         $('#sharewxshadow').show()
     })
 
-
+            $('.reward').click(function(){
+                location.href=' https://h5.youzan.com/v2/apps/wheel?alias=2g09xf780obx1'
+            })
     $.get('sharewxshadow.html',function(res){
         $(document.body).append(res)
     })
