@@ -4,7 +4,9 @@
 
     <meta charset="UTF-8">
     <meta http-equiv = "X-UA-Compatible" content ="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+
     <link rel="shortcut icon" href="favicon.ico"/>
     <link rel="bookmark" href="favicon.ico"/>
     <title></title>
@@ -15,16 +17,18 @@
     <style>
         body{
             font-family: SimHei;
+            padding:0;
+            margin:11px;
+            font-size: 10px;
         }
     .div1{
-
         background-color: #4F4B4C;
         margin-bottom: 11px;
         text-align: center;
-        height:50px;
-        line-height:50px;
+        height:37px;
+        line-height:37px;
         color:#FFFFFF;
-        font-size: 24px;
+        font-size: 1.6em;
         position: relative;
     }
         .div1 img{
@@ -39,56 +43,68 @@
 
         background-color: #EE296E;
         margin-bottom: 11px;
-        padding:13px;
+        padding:8px;
         color:#FFFFFF;
-        font-size:13px;
+        font-size:1.2em;
     }
     .div3{
 
         background-color: #65C99C;
         text-align: center;
-        padding:13px 0;
+        padding:8px 0;
         color:#FFFFFF;
-        letter-spacing: 1px;;
-    }
-    .div4{
-        height:170px;
-        width:170px;
-        text-align: center;
-        border-radius: 50%;
-        border:1px solid #65C99C;
-        position:relative;
-        margin:0 auto;
-        margin-top:58px;
-        color:#FFFFFF
-    }
-    .div5{
-        height:154px;
-        width:154px;
-        background-color: #65C99C;
-        text-align: center;
-        border-radius: 50%;
-        margin:0 auto;
-        position:relative;
-        top:8px;
-        
-    }
 
-    .div5 .div0{
-        height:27px
-
+        font-size:1.2em;
     }
+        .div4 {
+            border:1px solid #65C99C;
+            width:33%;
+            text-align: center;
+            position:relative;
+            margin:0 auto;
+            margin-top:29px;
+            color:#FFFFFF;
+            border-radius: 50%;
+        }
+        .div4>img{
+            width:100%;
+            visibility: hidden;
+        }
+        .div41{
+            width:100%;
+            position: absolute;
+            transform: translateY(-50%);
+            top:50%;
+        }
+        .div5 {
+            background-color:#65C99C;
+            margin:0 auto;
+            width:89%;
 
-    .div5 .text1{
-        font-size: 22px;
+            border-radius: 50%;
+        }
+        .div5>img{
+            width:100%;
+            visibility: hidden;
+        }
+        .div5 .text{
+            position: absolute;
+            width: 100%;
+            margin-top: 25%;
+            left: 0;
+        }
+        .div5 .text1{
 
-    }
-    .div5 .text2{
-        font-size: 80px;
-    }
+            font-size: 1.4em;
+            letter-spacing: 1px;
+        }
+        .div5 .text2{
+            font-size: 2.8em;
+        }
+
 
     .div6.div61{
-        margin-top: 44px;
+        margin-top: 28px;
 
     }
     .div6.div62{
@@ -96,79 +112,87 @@
 
     }
     .div6 {
-        padding-left: 20px;
+        position: relative;
         text-align: center;
         color:#656262
     }
     .div6 .input{
-        float: left;
-        width:59%;
+
+        width:72%;
         border: 1px solid #9E9D9D;
-    background-color: #F4F3F3;
+        background-color: #F4F3F3;
         text-align: center;
         border-radius: 5px;
-
+        height:15px;
+        left:14%;
+        position:absolute;
     }
     .div6 .title{
         float: left;
-        width:20%
+        font-size: 1.3em;
 
     }
     .div6 .unit{
-        float: left;
-       width:20%
+        float: right;
+        font-size: 1.3em;
 
     }
     .div7{
 
         background-color: #EE296E;
         margin-top: 43px;
-        padding:16px;
+        padding:12px;
     text-align: center;
         color:#FFFFFF;
-    font-size: 22px;
+
         letter-spacing: 4px;
+        font-size: 1.6em;
     }
     .div8{
 
-        margin-top: 27px;
-        padding:16px;
+        margin-top: 20px;
+
         text-align: center;
         color:#727172;
         letter-spacing: 2px;
+        font-size: 1.2em;
     }
     .div8 .num{
         letter-spacing: 0px;
         color:#65C99C;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: 1.3em;
+
     }
 
     .div9{
-        margin-top: 11px;
+        margin-top: 20px;
         background-color: #65C99C;
         text-align: center;
-        padding:16px;
+        padding:12px;
         color:#FFFFFF;
-        font-size: 22px;
+        font-size: 1.6em;
         letter-spacing: 4px;
     }
 
     .div10{
-          height:223px;
-          margin-top: 29px;
+
+          margin-top: 20px;
           text-align: center;
 
         border-top: 1px solid #CFCFCF;
         border-bottom: 1px solid #CFCFCF;
+        padding-bottom:20px;
       }
     .div10 .pic{
-        margin-top:30px;
-          height:129px;
-          width:129px;
+        margin-top:20px;
+          width:33%;
 
       }
     .div10 .text{
         margin-top:16px;
-    font-size: 18px;
+    font-size: 1.3em;
         color:#7BD0AA;
         letter-spacing: 1px;
         font-weight: 800;
@@ -180,8 +204,8 @@
 <body>
     <div class="div1"><img src="images/285)2X`0DJSM(C[T0U15_RC.png"><span class="title">BMI 体质测算器</span></div>
     <div class="div2">BMI指数（即身体质量指数，简称体质指数又称体重，英文为Body Mass Index，简称BMI），是用体重公斤数除以身高米数平方得出的数字，是目前国际上常用的衡量人体胖瘦程度以及是否健康的一个标准。</div>
-    <div class="div3">体质指数 (BMI) = 体重 (kg) / 身高^2 (m)</div>
-    <div class="div4"><div class="div5"><div class="div0"></div><div class="text1">BMI值</div><div class="text2">0</div></div></div>
+    <div class="div3">体质指数 (BMI) = 体重 (kg) &divide; 身高^2 (m)</div>
+    <div class="div4"><div class="div41"><div class="div5"><div class="text"><div class="text1">BMI值</div><div class="text2">0</div></div><img src="images/bb.png" /></div></div><img src="images/bb.png" /></div>
     <div class="div6 div61"><span class="title">体重</span><input class="input" type="number"><span class="unit">kg</span></div>
     <div style="clear: both"></div>
     <div class="div6 div62"><span  class="title">身高</span><input  class="input" type="number"><span class="unit">m</span></div>

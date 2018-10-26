@@ -29,15 +29,18 @@
     <style>
         body{
             font-family: SimHei;
+            padding:0;
+            margin:11px;
+            font-size: 10px;
         }
         .div1{
             background-color: #4F4B4C;
             margin-bottom: 11px;
             text-align: center;
-            height:50px;
-            line-height:50px;
+            height:37px;
+            line-height:37px;
             color:#FFFFFF;
-            font-size: 24px;
+            font-size: 1.6em;
             position: relative;
         }
         .div1 img{
@@ -48,53 +51,66 @@
         .div1 .title{
             position: relative;
         }
-        .div4{
-            height:170px;
-            width:170px;
-            text-align: center;
-            border-radius: 50%;
+        .div4 {
             border:1px solid #65C99C;
-            position:relative;
-            margin:0 auto;
-            margin-top:30px;
-            color:#FFFFFF
-        }
-        .div5{
-            height:154px;
-            width:154px;
-            background-color: #65C99C;
+            width:33%;
             text-align: center;
-            border-radius: 50%;
-            margin:0 auto;
             position:relative;
-            top:8px;
-
+            margin:0 auto;
+            margin-top:29px;
+            color:#FFFFFF;
+            border-radius: 50%;
         }
-        .div5 .div0{
-            height:27px
-
+        .div4>img{
+            width:100%;
+            visibility: hidden;
         }
+        .div41{
+            width:100%;
+            position: absolute;
+            transform: translateY(-50%);
+            top:50%;
+        }
+        .div5 {
+            background-color:#65C99C;
+            margin:0 auto;
+            width:89%;
 
+            border-radius: 50%;
+        }
+        .div5>img{
+            width:100%;
+            visibility: hidden;
+        }
+        .div5 .text{
+            position: absolute;
+            width: 100%;
+            margin-top: 25%;
+            left: 0;
+        }
         .div5 .text1{
-            font-size: 22px;
 
+            font-size: 1.4em;
+            letter-spacing: 1px;
         }
         .div5 .text2{
-            font-size: 70px;
+            font-size: 2.8em;
         }
+
         .dicsount {
             text-align: center;
-            padding: 13px;
-            font-size: 24px;
+            padding: 8px;
+            font-size: 1.6em;
             background-color: #EE296E;
             color:#ffffff;
             letter-spacing: 8px;
     margin-top:30px;
+            font-weight: 600;
         }
         .texthaha{
             text-align: center;
-            padding: 13px;
-            font-size: 22px;
+            padding: 8px;
+            font-size: 1.4em;
             background-color: #ffffff;
             color:#79CFA9;
             letter-spacing: 2px;
@@ -104,19 +120,19 @@
 
         .talbetitle{
             text-align: center;
-            padding: 13px;
-            font-size: 16px;
+            padding: 8px;
+            font-size: 1.4em;
             background-color: #B2B0B0;
             color:#ffffff;
             letter-spacing: 2px;
             margin-top:10px;
-            font-weight: 700;
+            font-weight: 500;
         }
 
         .talbecontent{
 
-            padding: 13px;
-            font-size: 16px;
+            padding: 8px;
+            font-size: 1.4em;
             background-color: #F4F3F3;
             color:#9B9999;
             letter-spacing: 2px;
@@ -146,8 +162,8 @@
         }
         .share {
             text-align: center;
-            padding: 13px;
-            font-size: 22px;
+            padding: 8px;
+            font-size: 1.4em;
             background-color: #65C99C;
             color:#ffffff;
             letter-spacing: 3px;
@@ -155,8 +171,8 @@
         }
         .reward {
             text-align: center;
-            padding: 13px;
-            font-size: 22px;
+            padding: 8px;
+            font-size: 1.4em;
             background-color: #EE296E;
             color:#ffffff;
             letter-spacing: 2px;
@@ -165,8 +181,8 @@
 
         .again {
             text-align: center;
-            padding: 13px;
-            font-size: 22px;
+            padding: 8px;
+            font-size: 1.4em;
             background-color: #B2B0B0;
             color:#ffffff;
             letter-spacing: 2px;
@@ -174,12 +190,14 @@
         }
 
         .div10{
-            height:223px;
-            margin-top: 29px;
+
+
+            margin-top: 20px;
             text-align: center;
 
             border-top: 1px solid #CFCFCF;
             border-bottom: 1px solid #CFCFCF;
+            padding-bottom:20px;
         }
         .div10 .pic{
             margin-top:30px;
@@ -189,7 +207,7 @@
         }
         .div10 .text{
             margin-top:16px;
-            font-size: 18px;
+            font-size: 1.3em;
             color:#7BD0AA;
             letter-spacing: 1px;
             font-weight: 800;
@@ -200,7 +218,7 @@
 
 <body>
 <div class="div1"><img src="images/285)2X`0DJSM(C[T0U15_RC.png"><span class="title">BMI 体质测算器</span></div>
-<div class="div4"><div class="div5"><div class="div0"></div><div class="text1">BMI值</div><div class="text2 bmiNum"></div></div></div>
+<div class="div4"><div class="div41"><div class="div5"><div class="text"><div class="text1">BMI值</div><div class="text2">0</div></div><img src="images/bb.png" /></div></div><img src="images/bb.png" /></div>
 <div class="dicsount"><span class="discountNum"></span>折</div>
 <div class="texthaha"></div>
 <div class="talbetitle">BMI第三季活动折扣对照表</div>
