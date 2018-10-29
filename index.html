@@ -208,7 +208,7 @@
     <div class="div4"><div class="div41"><div class="div5"><div class="text"><div class="text1">BMI值</div><div class="text2">0</div></div><img src="images/bb.png" /></div></div><img src="images/bb.png" /></div>
     <div class="div6 div61"><span class="title">体重</span><input class="input" type="number"><span class="unit">kg</span></div>
     <div style="clear: both"></div>
-    <div class="div6 div62"><span  class="title">身高</span><input  class="input" type="number"><span class="unit">m</span></div>
+    <div class="div6 div62"><span  class="title">身高</span><input  class="input" type="number"><span class="unit">cm</span></div>
     <div style="clear: both"></div>
     <div class="div7">测一测</div>
     <div class="div8">活动参与人数：<span class="num"></span></div>
@@ -253,7 +253,7 @@
 
     $(".div7").click(function(){
         var kg = $('.div61 input').val()
-        var m = $('.div62 input').val()
+        var cm = $('.div62 input').val()
         if(!kg)
         {
             alert('请输入体重')
@@ -264,21 +264,21 @@
             alert('体重有误')
             return;
         }
-        if(!m)
+        if(!cm)
         {
             alert('请输入身高')
             return;
         }
-        if(isNaN(m))
+        if(isNaN(cm))
         {
             alert('身高有误')
             return;
         }
-        if(m>4){
-            alert('身高有误.单位m')
+        if(cm>400||cm<1){
+            alert('身高有误.单位cm')
             return;
         }
-            location.href='result.html?kg='+kg+'&m='+m
+            location.href='result.html?kg='+kg+'&cm='+cm
     })
     $('.div9').click(function(){
         $('#sharewxshadow').show()

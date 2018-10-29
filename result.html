@@ -250,7 +250,7 @@
     $.ajax({
         url:'/BMI/u/ua/bmitest',
         method:'post',
-        data:{kg:queryObj.kg,m:queryObj.m},
+        data:{kg:queryObj.kg,cm:queryObj.cm},
         async:true,
         success:function(res){
             if(res.code==0){
