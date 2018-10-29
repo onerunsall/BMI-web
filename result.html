@@ -20,10 +20,12 @@
         return obj;
     }
 
-    var queryObj = parseQueryStr(location.search.substr(1))
+    var kg = sessionStorage.getItem('kg')
+    var cm = sessionStorage.getItem('cm')
 
-
-
+    if(!kg || !cm){
+        location.href="index.html"
+    }
 </script>
     <title>BMI 体质测算器</title>
     <style>
@@ -106,6 +108,7 @@
             letter-spacing: 8px;
     margin-top:30px;
             font-weight: 600;
+            display:none;
         }
         .texthaha{
             text-align: center;
@@ -229,7 +232,7 @@
 
 </div>
 <div style="clear:both"></div>
-<div class="share">转给朋友，测测<span class="discountNum"></span>折吃好肉</div>
+<div class="share">转给朋友，测测5折吃好肉</div>
 <div class="reward">点击抽奖，赢3000元</div>
 <div class="again">再测一次</div>
 
@@ -250,13 +253,14 @@
     $.ajax({
         url:'/BMI/u/ua/bmitest',
         method:'post',
-        data:{kg:queryObj.kg,cm:queryObj.cm},
+        data:{kg:kg,cm:cm},
         async:true,
         success:function(res){
             if(res.code==0){
                 myDiscount=res.data;
                 if(myDiscount.bmiInfo){
                     $('.texthaha').text(myDiscount.bmiInfo.funnyWord)
+                    $('.dicsount').show()
                     $('.discountNum').text(myDiscount.bmiInfo.discount)
                 }
                 $('.bmiNum').text(parseInt(myDiscount.bmi*10)/10)

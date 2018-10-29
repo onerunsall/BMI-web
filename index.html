@@ -278,7 +278,9 @@
             alert('身高有误.单位cm')
             return;
         }
-            location.href='result.html?kg='+kg+'&cm='+cm
+        sessionStorage.setItem('kg',kg)
+        sessionStorage.setItem('cm',cm)
+            location.href='result.html'
     })
     $('.div9').click(function(){
         $('#sharewxshadow').show()
